@@ -36,7 +36,6 @@ class PresentVC: UIPresentationController, PresentBottomVCProtocol {
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
     }
     
-    /// add blackView to the container and let alpha animate to 1 when show transition will begin
     override func presentationTransitionWillBegin() {
         blackView.alpha = 0
         containerView?.addSubview(blackView)
@@ -45,27 +44,21 @@ class PresentVC: UIPresentationController, PresentBottomVCProtocol {
         }
     }
     
-    /// let blackView's alpha animate to 0 when hide transition will begin.
     override func dismissalTransitionWillBegin() {
         UIView.animate(withDuration: 0.5) {
             self.blackView.alpha = 0
         }
     }
     
-    /// remove the blackView when hide transition end
-    ///
-    /// - Parameter completed: completed or no
     override func dismissalTransitionDidEnd(_ completed: Bool) {
         if completed {
             blackView.removeFromSuperview()
         }
     }
     
-    /// define the frame of bottom view
     override var frameOfPresentedViewInContainerView: CGRect {
         return CGRect(x: 0, y: UIScreen.main.bounds.height-controllerHeight, width: UIScreen.main.bounds.width, height: controllerHeight)
     }
-    
     
     @objc func sendHideNotification() {
         dismissHandle?()
