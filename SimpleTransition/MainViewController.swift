@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func action(_ sender: Any) {
+    @IBAction func presentAsPushAction(_ sender: Any) {
         
         let detailNVC = UINavigationController(rootViewController: detailVC)
         
@@ -29,14 +29,11 @@ class MainViewController: UIViewController {
         present(detailNVC, animated: true, completion: nil)
     }
     
-    
-    @IBAction func layerAction(_ sender: Any) {
+    @IBAction func presentAsPushLayerAction(_ sender: Any) {
         
         let detailNVC = UINavigationController(rootViewController: detailVC)
         present(detailNVC)
     }
-    
-    
     
     @IBAction func otherAnimateAction(_ sender: Any) {
         
@@ -48,5 +45,26 @@ class MainViewController: UIViewController {
         present(detailNVC, animated: true, completion: nil)
     }
     
+    @IBAction func presentAction(_ sender: Any) {
+        
+        let viewController = detailVC
+        viewController.modalPresentationStyle = .custom
+        viewController.transitioningDelegate = self
+        self.present(viewController, animated: true)
+    }
+    
 }
 
+extension MainViewController: UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        
+        let presentVC = PresentVC(presentedViewController: presented, presenting: presenting)
+        presentVC.dismissHandle = { 
+            source.dismiss(animated: true, completion: nil)
+        }
+        
+        return presentVC
+    }
+    
+}

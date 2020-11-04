@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func action(_ sender: Any) {
+    @IBAction func dismissAsPopAction(_ sender: Any) {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let mainVC = sb.instantiateViewController(identifier: "MainNavigation")
@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func layerAction(_ sender: Any) {
+    @IBAction func dismissAsPopLayerAction(_ sender: Any) {
         
         dismiss()
     }
@@ -38,5 +38,27 @@ class DetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func presentAction(_ sender: Any) {
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let mainVC = sb.instantiateViewController(identifier: "MainNavigation")
+        mainVC.modalPresentationStyle = .custom
+        mainVC.transitioningDelegate = self
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
+extension DetailViewController: UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        
+        let presentVC = PresentVC(presentedViewController: presented, presenting: presenting)
+        presentVC.dismissHandle = {
+            source.dismiss(animated: true, completion: nil)
+        }
+        
+        return presentVC
+    }
+    
+}

@@ -23,7 +23,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="layerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gS0-Pp-EqN"/>
+                                    <action selector="presentAsPushLayerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cdL-cO-3fF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6U5-j4-VG9">
@@ -40,6 +40,13 @@
                                     <action selector="otherAnimateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BNt-Cy-PKR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ik-fH-mhu">
+                                <rect key="frame" x="341" y="686" width="53" height="30"/>
+                                <state key="normal" title="present"/>
+                                <connections>
+                                    <action selector="presentAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B2R-ih-cfZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -49,13 +56,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FnY-T7-8z4" secondAttribute="bottom" constant="20" id="GQw-wU-vdm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6U5-j4-VG9" secondAttribute="trailing" constant="20" id="NRa-HZ-zSP"/>
                             <constraint firstItem="FnY-T7-8z4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PXO-Ea-pJ8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Ik-fH-mhu" secondAttribute="bottom" constant="20" id="Pgj-QP-Q0w"/>
                             <constraint firstItem="QyV-qV-PXl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VRO-vT-tBy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Ik-fH-mhu" secondAttribute="trailing" constant="20" id="ySk-RJ-88n"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main" id="b4p-fs-rDb">
                         <barButtonItem key="rightBarButtonItem" title="present" style="plain" id="o1M-oc-uu6">
                             <connections>
-                                <action selector="action:" destination="BYZ-38-t0r" id="QSL-Tb-9Kg"/>
+                                <action selector="presentAsPushAction:" destination="BYZ-38-t0r" id="dC2-6m-IHN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -78,7 +87,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="layerAction:" destination="zHe-eS-Txh" eventType="touchUpInside" id="ehC-20-Be8"/>
+                                    <action selector="dismissAsPopLayerAction:" destination="zHe-eS-Txh" eventType="touchUpInside" id="Qfi-ql-adr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVG-vQ-605">
@@ -88,20 +97,29 @@
                                     <action selector="otherAnimateAction:" destination="zHe-eS-Txh" eventType="touchUpInside" id="Q6N-Gd-AH3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0P-ZD-b4v">
+                                <rect key="frame" x="342" y="686" width="52" height="30"/>
+                                <state key="normal" title="dismiss"/>
+                                <connections>
+                                    <action selector="presentAction:" destination="zHe-eS-Txh" eventType="touchUpInside" id="vEx-xQ-sWZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fHS-7L-6nU"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="ZOz-4q-M3I" firstAttribute="centerY" secondItem="fHS-7L-6nU" secondAttribute="centerY" id="0vm-Gd-7Z5"/>
                             <constraint firstItem="ZOz-4q-M3I" firstAttribute="centerX" secondItem="fHS-7L-6nU" secondAttribute="centerX" id="Sy1-T5-RE7"/>
+                            <constraint firstItem="fHS-7L-6nU" firstAttribute="trailing" secondItem="c0P-ZD-b4v" secondAttribute="trailing" constant="20" id="YwM-zV-PLX"/>
                             <constraint firstItem="fHS-7L-6nU" firstAttribute="bottom" secondItem="zVG-vQ-605" secondAttribute="bottom" constant="20" id="dbi-sk-zbQ"/>
+                            <constraint firstItem="fHS-7L-6nU" firstAttribute="bottom" secondItem="c0P-ZD-b4v" secondAttribute="bottom" constant="20" id="efj-xa-ELJ"/>
                             <constraint firstItem="zVG-vQ-605" firstAttribute="leading" secondItem="fHS-7L-6nU" secondAttribute="leading" constant="20" id="vjj-K9-IlI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="detail" id="Jre-Je-oWl">
                         <barButtonItem key="rightBarButtonItem" title="dismiss" id="daB-Vz-iMB">
                             <connections>
-                                <action selector="action:" destination="zHe-eS-Txh" id="bmz-0i-CNS"/>
+                                <action selector="dismissAsPopAction:" destination="zHe-eS-Txh" id="ku5-GX-ugG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

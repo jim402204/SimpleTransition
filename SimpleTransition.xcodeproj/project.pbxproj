@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2210F66D255252E900CC7DEB /* Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210F66C255252E900CC7DEB /* Extentsion.swift */; };
 		2210F67025525B0D00CC7DEB /* ScaleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2210F66F25525B0D00CC7DEB /* ScaleTransition.swift */; };
+		221787C525528BCE00C20E7C /* PresentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221787C425528BCE00C20E7C /* PresentVC.swift */; };
 		226B850B2551486100F27BA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226B850A2551486100F27BA6 /* AppDelegate.swift */; };
 		226B850D2551486100F27BA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226B850C2551486100F27BA6 /* SceneDelegate.swift */; };
 		226B850F2551486100F27BA6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226B850E2551486100F27BA6 /* MainViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		2210F66C255252E900CC7DEB /* Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentsion.swift; sourceTree = "<group>"; };
 		2210F66F25525B0D00CC7DEB /* ScaleTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleTransition.swift; sourceTree = "<group>"; };
+		221787C425528BCE00C20E7C /* PresentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentVC.swift; sourceTree = "<group>"; };
 		226B85072551486100F27BA6 /* SimpleTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		226B850A2551486100F27BA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		226B850C2551486100F27BA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221787C325528BBE00C20E7C /* presentVC */ = {
+			isa = PBXGroup;
+			children = (
+				221787C425528BCE00C20E7C /* PresentVC.swift */,
+			);
+			path = presentVC;
+			sourceTree = "<group>";
+		};
 		226B84FE2551486100F27BA6 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 				226B852C25514C7600F27BA6 /* PresentAsPushTransitionDelegate.swift */,
 				226B852625514BD400F27BA6 /* PresentAsPushTransition.swift */,
 				2210F66F25525B0D00CC7DEB /* ScaleTransition.swift */,
+				221787C325528BBE00C20E7C /* presentVC */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -175,6 +186,7 @@
 				226B85222551496300F27BA6 /* DetailViewController.swift in Sources */,
 				2210F66D255252E900CC7DEB /* Extentsion.swift in Sources */,
 				2210F67025525B0D00CC7DEB /* ScaleTransition.swift in Sources */,
+				221787C525528BCE00C20E7C /* PresentVC.swift in Sources */,
 				226B852D25514C7600F27BA6 /* PresentAsPushTransitionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
